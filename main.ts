@@ -4,13 +4,111 @@ game.pause();
 const obstacleBrightness = 100;
 const playerBrightness = 255;
 
+const betterDigits: Image[] = [];
+
+const betterZero = images.createImage(`
+. . # . .
+. # . # .
+. # . # .
+. # . # .
+. . # . .
+`)
+
+const betterOne = images.createImage(`
+. . # . .
+. # # . .
+. . # . .
+. . # . .
+. # # # .
+`)
+const betterTwo = images.createImage(`
+. . # . .
+. # . # .
+. . . # .
+. . # . .
+. # # # .
+`)
+const betterThree = images.createImage(`
+. # # . .
+. . . # .
+. . # # .
+. . . # .
+. # # . .
+`)
+const betterFour = images.createImage(`
+. # . # .
+. # . # .
+. # # # .
+. . . # .
+. . . # .
+`)
+const betterFive = images.createImage(`
+. # # # .
+. # . . .
+. # # . .
+. . . # .
+. # # . .
+`)
+const betterSix = images.createImage(`
+. . # # .
+. # . . .
+. # # . .
+. # . # .
+. . # . .
+`)
+const betterSeven = images.createImage(`
+. # # # .
+. . . # .
+. . # . .
+. . # . .
+. . # . .
+`)
+const betterEight = images.createImage(`
+. . # . .
+. # . # .
+. . # . .
+. # . # .
+. . # . .
+`)
+const betterNine = images.createImage(`
+. . # . .
+. # . # .
+. . # # .
+. . . # .
+. . . # .
+`)
+
+betterDigits.push(betterZero);
+betterDigits.push(betterOne);
+betterDigits.push(betterTwo);
+betterDigits.push(betterThree);
+betterDigits.push(betterFour);
+betterDigits.push(betterFive);
+betterDigits.push(betterSix);
+betterDigits.push(betterSeven);
+betterDigits.push(betterEight);
+betterDigits.push(betterNine);
+
+
+function betterShowNum(value = 0, interval = 500, pause = 0) {
+    const digits = value.toString().split('');
+    for(let i = 0; i < digits.length; i++) {
+        betterDigits[parseInt(digits[i])].scrollImage(1, interval);
+        basic.pause(pause);
+    }
+}
+
 const emptyImg = images.createImage(`
 . . . . .
 . . . . .
 . . . . .
 . . . . .
 . . . . .
-`);
+`)
+
+function scrollClear(time = 0) {
+    emptyImg.scrollImage(1, time);
+}
 
 function moveObstacles () {
     for (let i = 0; i <= obstacles.length - 1; i++) {
@@ -67,8 +165,9 @@ function die() {
 
     while(dead) {
         if (input.logoIsPressed()) main();
-        basic.showNumber(score);
-        basic.clearScreen();
+        scrollClear(150);
+        betterShowNum(score, 150);
+        
         basic.pause(1000);
     }
 }
