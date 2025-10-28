@@ -64,11 +64,11 @@ const betterSeven = images.createImage(`
 . . # . .
 `)
 const betterEight = images.createImage(`
-. . # . .
+. # # # .
 . # . # .
 . . # . .
 . # . # .
-. . # . .
+. # # # .
 `)
 const betterNine = images.createImage(`
 . . # . .
@@ -191,6 +191,9 @@ function main() {
     input.onButtonPressed(Button.B, function () {
         player.change(LedSpriteProperty.X, 1);
     })
+
+    // 321 countdown
+    betterShowNum(321, 50, 800);
 
     while(!dead) {
         basic.clearScreen();
