@@ -1,7 +1,7 @@
 this is a game
 
 
-> Open this page at [https://technologicallyadvancedmango.github.io/microbit-game/](https://technologicallyadvancedmango.github.io/microbit-game/)
+> Open this page at [https://microbit.game.themango.click/](https://microbit.game.themango.click/)
 
 ## Use as Extension
 
