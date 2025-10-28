@@ -1,0 +1,4 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="FME$rZGj!FC-lhfAZ#F+">player</variable><variable id="!ethq=FlVqS(hbd]W7{D">i</variable><variable id="rx*Ov{26Vs+(?,D]#-=a">obstacles</variable><variable id="0L+7#O)%Pi)(q6B:Ni6O">thisObst2</variable></variables><comment id="RS$ac%`:)C}e@JJlH)Aq" x="789" y="409" w="300" h="120">
+Don't use the default renderer
+game.pause();
+</comment></xml>
